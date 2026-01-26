@@ -1,4 +1,5 @@
 import { ArrowRight, Play } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,30 +18,64 @@ export function HeroSection() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 gradient-bg-subtle" />
-      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+      <motion.div 
+        className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div 
+        className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
+        animate={{ 
+          scale: [1.2, 1, 1.2],
+          opacity: [0.5, 0.3, 0.5]
+        }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary animate-fade-in">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary"
+            >
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               #1 Digital Marketing Agency in Hyderabad
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight animate-fade-in stagger-1">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            >
               Best{" "}
               <span className="gradient-text">Digital Marketing</span>{" "}
               Agency in Hyderabad
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-lg animate-fade-in stagger-2">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg sm:text-xl text-muted-foreground max-w-lg"
+            >
               From strategy to execution, we craft digital journeys that turn
               clicks into customers.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4 animate-fade-in stagger-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-4"
+            >
               <Button
                 size="lg"
                 className="gradient-bg text-primary-foreground hover:opacity-90 transition-opacity gap-2 h-12 px-8"
@@ -56,33 +91,39 @@ export function HeroSection() {
                 <Play className="w-4 h-4" />
                 Watch Demo
               </Button>
-            </div>
+            </motion.div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8 pt-4 animate-fade-in stagger-4">
-              <div>
-                <div className="text-3xl font-bold gradient-text">500+</div>
-                <div className="text-sm text-muted-foreground">
-                  Projects Delivered
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text">98%</div>
-                <div className="text-sm text-muted-foreground">
-                  Client Satisfaction
-                </div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold gradient-text">50+</div>
-                <div className="text-sm text-muted-foreground">
-                  Team Experts
-                </div>
-              </div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex flex-wrap gap-8 pt-4"
+            >
+              {[
+                { value: "500+", label: "Projects Delivered" },
+                { value: "98%", label: "Client Satisfaction" },
+                { value: "50+", label: "Team Experts" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                >
+                  <div className="text-3xl font-bold gradient-text">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
 
           {/* Right - Contact Form */}
-          <div className="animate-fade-in stagger-3">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <div className="glass-effect rounded-2xl p-6 sm:p-8 shadow-soft-lg">
               <h3 className="text-xl font-bold mb-2">Get My Free Consultation</h3>
               <p className="text-muted-foreground text-sm mb-6">
@@ -124,7 +165,7 @@ export function HeroSection() {
                 </Button>
               </form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

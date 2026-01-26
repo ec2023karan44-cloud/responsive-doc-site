@@ -1,22 +1,23 @@
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Careers", href: "#" },
-    { label: "Contact", href: "#contact" },
+    { label: "About Us", href: "/#about" },
+    { label: "Services", href: "/#services" },
+    { label: "Case Studies", href: "/#case-studies" },
+    { label: "Contact", href: "/#contact" },
   ],
   services: [
-    { label: "SEO", href: "#services" },
-    { label: "Social Media", href: "#services" },
-    { label: "PPC Ads", href: "#services" },
-    { label: "Web Development", href: "#services" },
+    { label: "SEO", href: "/#services" },
+    { label: "Social Media", href: "/#services" },
+    { label: "PPC Ads", href: "/#services" },
+    { label: "Web Development", href: "/#services" },
   ],
   resources: [
-    { label: "Blog", href: "#" },
-    { label: "Case Studies", href: "#" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Blog", href: "/blog", isRoute: true },
+    { label: "Case Studies", href: "/#case-studies" },
+    { label: "FAQ", href: "/#faq" },
     { label: "Privacy Policy", href: "#" },
   ],
 };
@@ -35,14 +36,14 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
-            <a href="#home" className="flex items-center gap-2 mb-4">
+            <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-lg">A</span>
               </div>
               <span className="font-bold text-xl">
                 Ad<span className="gradient-text">Craftz</span>
               </span>
-            </a>
+            </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               The Best Digital Marketing Agency in Hyderabad. We craft digital
               journeys that turn clicks into customers.
@@ -101,12 +102,21 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </a>
+                  {'isRoute' in link && link.isRoute ? (
+                    <Link
+                      to={link.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animations/ScrollReveal";
 
 const faqs = [
   {
@@ -39,7 +40,7 @@ export function FAQSection() {
       <div className="container">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-12">
+          <ScrollReveal className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
               FAQ
             </div>
@@ -50,25 +51,28 @@ export function FAQSection() {
             <p className="text-lg text-muted-foreground">
               Got questions? We've got answers.
             </p>
-          </div>
+          </ScrollReveal>
 
           {/* Accordion */}
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-card rounded-xl border border-border px-6 data-[state=open]:shadow-soft"
-              >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline py-5">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <StaggerContainer staggerDelay={0.1}>
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <StaggerItem key={index}>
+                  <AccordionItem
+                    value={`item-${index}`}
+                    className="bg-card rounded-xl border border-border px-6 data-[state=open]:shadow-soft"
+                  >
+                    <AccordionTrigger className="text-left font-semibold hover:no-underline py-5">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-5">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                </StaggerItem>
+              ))}
+            </Accordion>
+          </StaggerContainer>
         </div>
       </div>
     </section>
