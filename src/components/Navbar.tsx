@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import logo from "@/assets/AdCraftz-logo.jpeg";
 
 const navItems = [
   { label: "Home", href: "/#home" },
@@ -51,12 +52,11 @@ export function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">A</span>
-          </div>
-          <span className="font-bold text-xl">
-            Ad<span className="gradient-text">Craftz</span>
-          </span>
+          <img 
+            src={logo} 
+            alt="AdCraftz Logo" 
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
