@@ -1,12 +1,31 @@
 import { useState } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, User, Phone, Mail, Briefcase, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ConsultationModal } from "@/components/ConsultationModal";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 export function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission
+  };
 
   return (
     <section
@@ -126,28 +145,118 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Trust Badges */}
+          {/* Inline Premium Form */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-6 mt-12 text-muted-foreground text-sm"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full max-w-lg mt-12"
           >
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent border-2 border-background"
-                  />
-                ))}
-              </div>
-              <span>500+ Happy Clients</span>
-            </div>
-            <div className="h-4 w-px bg-border hidden sm:block" />
-            <div className="flex items-center gap-2">
-              <span className="text-yellow-500">★★★★★</span>
-              <span>4.9/5 Rating</span>
+            <div className="relative">
+              {/* Glow Effect */}
+              <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50 opacity-50 blur-lg" />
+              
+              {/* Form Container */}
+              <form 
+                onSubmit={handleSubmit}
+                className="relative glass-effect rounded-2xl p-6 border border-primary/20"
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                  {/* Name Field */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 blur transition-opacity" />
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3 p-1.5 rounded-lg bg-primary/10">
+                        <User className="w-4 h-4 text-primary" />
+                      </div>
+                      <input
+                        type="text"
+                        placeholder="Your Name"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Phone Field */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 blur transition-opacity" />
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3 p-1.5 rounded-lg bg-primary/10">
+                        <Phone className="w-4 h-4 text-primary" />
+                      </div>
+                      <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Email Field */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 blur transition-opacity" />
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3 p-1.5 rounded-lg bg-primary/10">
+                        <Mail className="w-4 h-4 text-primary" />
+                      </div>
+                      <input
+                        type="email"
+                        placeholder="Email Address"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full pl-12 pr-4 py-3 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  {/* Service Select */}
+                  <div className="relative group">
+                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 blur transition-opacity" />
+                    <div className="relative flex items-center">
+                      <div className="absolute left-3 p-1.5 rounded-lg bg-primary/10 z-10">
+                        <Briefcase className="w-4 h-4 text-primary" />
+                      </div>
+                      <Select
+                        value={formData.service}
+                        onValueChange={(value) => setFormData({ ...formData, service: value })}
+                      >
+                        <SelectTrigger className="w-full pl-12 pr-4 py-3 h-auto rounded-xl bg-secondary/50 border-border focus:border-primary focus:ring-2 focus:ring-primary/20 text-sm">
+                          <SelectValue placeholder="Select Service" />
+                        </SelectTrigger>
+                        <SelectContent className="bg-popover border-border">
+                          <SelectItem value="seo">SEO Optimization</SelectItem>
+                          <SelectItem value="social">Social Media Marketing</SelectItem>
+                          <SelectItem value="ppc">PPC Advertising</SelectItem>
+                          <SelectItem value="web">Website Development</SelectItem>
+                          <SelectItem value="content">Content Marketing</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Submit Button */}
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative w-full group overflow-hidden rounded-xl"
+                >
+                  <div className="absolute inset-0 gradient-bg opacity-100 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  <div className="relative flex items-center justify-center gap-2 py-3 text-primary-foreground font-semibold">
+                    <Send className="w-4 h-4" />
+                    Get Free Consultation
+                  </div>
+                </motion.button>
+              </form>
             </div>
           </motion.div>
         </div>
