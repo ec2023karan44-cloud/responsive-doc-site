@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import heroBanner from "@/assets/hero-banner.jpg";
+
 
 export function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,36 +35,8 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-20 pb-12 overflow-visible"
+      className="relative min-h-screen flex items-center pt-20 pb-12"
     >
-      {/* Fixed Background Layer */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
-        {/* Hero Banner Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBanner})` }}
-        >
-          <div className="absolute inset-0 bg-background/85 dark:bg-background/95" />
-        </div>
-
-        {/* Static Gradient Orbs (no animation to prevent jank) */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-40" />
-
-        {/* Static Decorative Particles */}
-        {[...Array(6)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1.5 h-1.5 rounded-full bg-primary/40"
-            style={{
-              left: `${10 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Scrollable Content */}
       <div className="container relative z-10">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 items-center">
           
