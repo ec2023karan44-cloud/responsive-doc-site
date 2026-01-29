@@ -85,10 +85,10 @@ export function HeroSection() {
       ))}
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 items-center">
           
-          {/* LEFT SIDE - Content */}
-          <div className="text-center lg:text-left">
+          {/* LEFT SIDE - Content (Takes more space) */}
+          <div className="flex-1 text-center lg:text-left lg:pr-8">
             {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -110,7 +110,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6"
             >
               Best{" "}
               <span className="gradient-text">Digital Marketing</span>{" "}
@@ -122,7 +122,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8"
+              className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-8"
             >
               From strategy to execution, we craft digital journeys that turn
               clicks into customers. Let us help you dominate the digital landscape.
@@ -169,72 +169,60 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* RIGHT SIDE - Premium Form */}
+          {/* RIGHT SIDE - Compact Premium Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="w-full max-w-md mx-auto lg:ml-auto"
+            className="w-full lg:w-auto shrink-0"
           >
-            <div className="relative">
-              {/* Animated Glow Effect */}
+            <div className="relative w-full max-w-[340px] mx-auto">
+              {/* Animated Border Glow */}
               <motion.div 
-                className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary via-accent to-primary opacity-60 blur-xl"
+                className="absolute -inset-[2px] rounded-2xl bg-gradient-to-r from-primary via-accent to-primary opacity-75"
                 animate={{
                   backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
                 }}
                 transition={{
-                  duration: 5,
+                  duration: 3,
                   repeat: Infinity,
                   ease: "linear",
                 }}
                 style={{ backgroundSize: "200% 200%" }}
               />
               
-              {/* Floating Decorative Elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-primary/20 blur-2xl"
-                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-16 h-16 rounded-full bg-accent/20 blur-2xl"
-                animate={{ scale: [1.2, 1, 1.2], opacity: [0.8, 0.5, 0.8] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              
               {/* Form Container */}
-              <div className="relative glass-effect rounded-3xl p-8 border border-primary/20 shadow-2xl">
+              <div className="relative bg-card rounded-2xl p-5 shadow-2xl border border-border/50">
                 {/* Form Header */}
-                <div className="text-center mb-8">
+                <div className="text-center mb-5">
                   <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
-                    className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-accent mb-4"
+                    className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent mb-3"
                   >
-                    <Zap className="w-7 h-7 text-primary-foreground" />
+                    <Zap className="w-5 h-5 text-primary-foreground" />
                   </motion.div>
                   <motion.h3
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
-                    className="text-2xl font-bold text-foreground mb-2"
+                    className="text-lg font-bold text-foreground"
                   >
-                    Get Your Free Quote
+                    Get Free Quote
                   </motion.h3>
                   <motion.p
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.7 }}
-                    className="text-sm text-muted-foreground"
+                    className="text-xs text-muted-foreground mt-1"
                   >
-                    Fill the form & our expert will contact you within 24 hours
+                    Response within 24 hours
                   </motion.p>
                 </div>
 
                 {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   {/* Name Field */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -242,20 +230,17 @@ export function HeroSection() {
                     transition={{ delay: 0.8 }}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
-                    <div className="relative flex items-center">
-                      <div className="absolute left-4 p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <User className="w-4 h-4 text-primary" />
-                      </div>
-                      <input
-                        type="text"
-                        placeholder="Your Full Name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full pl-14 pr-4 py-4 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-                        required
-                      />
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-focus-within:from-primary/30 group-focus-within:to-accent/30 transition-all">
+                      <User className="w-4 h-4 text-primary" />
                     </div>
+                    <input
+                      type="text"
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full pl-13 pr-3 py-3 pl-[52px] rounded-xl bg-secondary/80 border border-border/80 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                      required
+                    />
                   </motion.div>
 
                   {/* Phone Field */}
@@ -265,20 +250,17 @@ export function HeroSection() {
                     transition={{ delay: 0.9 }}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
-                    <div className="relative flex items-center">
-                      <div className="absolute left-4 p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <Phone className="w-4 h-4 text-primary" />
-                      </div>
-                      <input
-                        type="tel"
-                        placeholder="Phone Number"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full pl-14 pr-4 py-4 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-                        required
-                      />
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-focus-within:from-primary/30 group-focus-within:to-accent/30 transition-all">
+                      <Phone className="w-4 h-4 text-primary" />
                     </div>
+                    <input
+                      type="tel"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full pl-13 pr-3 py-3 pl-[52px] rounded-xl bg-secondary/80 border border-border/80 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                      required
+                    />
                   </motion.div>
 
                   {/* Email Field */}
@@ -288,20 +270,17 @@ export function HeroSection() {
                     transition={{ delay: 1.0 }}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
-                    <div className="relative flex items-center">
-                      <div className="absolute left-4 p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                        <Mail className="w-4 h-4 text-primary" />
-                      </div>
-                      <input
-                        type="email"
-                        placeholder="Email Address"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full pl-14 pr-4 py-4 rounded-xl bg-secondary/50 border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground placeholder:text-muted-foreground"
-                        required
-                      />
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-focus-within:from-primary/30 group-focus-within:to-accent/30 transition-all">
+                      <Mail className="w-4 h-4 text-primary" />
                     </div>
+                    <input
+                      type="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full pl-13 pr-3 py-3 pl-[52px] rounded-xl bg-secondary/80 border border-border/80 focus:border-primary focus:ring-1 focus:ring-primary/30 transition-all outline-none text-sm text-foreground placeholder:text-muted-foreground"
+                      required
+                    />
                   </motion.div>
 
                   {/* Service Select */}
@@ -311,27 +290,24 @@ export function HeroSection() {
                     transition={{ delay: 1.1 }}
                     className="relative group"
                   >
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 blur transition-all duration-300" />
-                    <div className="relative flex items-center">
-                      <div className="absolute left-4 p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors z-10">
-                        <Briefcase className="w-4 h-4 text-primary" />
-                      </div>
-                      <Select
-                        value={formData.service}
-                        onValueChange={(value) => setFormData({ ...formData, service: value })}
-                      >
-                        <SelectTrigger className="w-full pl-14 pr-4 py-4 h-auto rounded-xl bg-secondary/50 border-border focus:border-primary focus:ring-2 focus:ring-primary/20">
-                          <SelectValue placeholder="Select Service" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-popover border-border">
-                          <SelectItem value="seo">SEO Optimization</SelectItem>
-                          <SelectItem value="social">Social Media Marketing</SelectItem>
-                          <SelectItem value="ppc">PPC Advertising</SelectItem>
-                          <SelectItem value="web">Website Development</SelectItem>
-                          <SelectItem value="content">Content Marketing</SelectItem>
-                        </SelectContent>
-                      </Select>
+                    <div className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center z-10 group-focus-within:from-primary/30 group-focus-within:to-accent/30 transition-all">
+                      <Briefcase className="w-4 h-4 text-primary" />
                     </div>
+                    <Select
+                      value={formData.service}
+                      onValueChange={(value) => setFormData({ ...formData, service: value })}
+                    >
+                      <SelectTrigger className="w-full pl-[52px] pr-3 py-3 h-auto rounded-xl bg-secondary/80 border-border/80 focus:border-primary focus:ring-1 focus:ring-primary/30 text-sm">
+                        <SelectValue placeholder="Select Service" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-popover border-border">
+                        <SelectItem value="seo">SEO Optimization</SelectItem>
+                        <SelectItem value="social">Social Media</SelectItem>
+                        <SelectItem value="ppc">PPC Advertising</SelectItem>
+                        <SelectItem value="web">Web Development</SelectItem>
+                        <SelectItem value="content">Content Marketing</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </motion.div>
 
                   {/* Submit Button */}
@@ -339,32 +315,33 @@ export function HeroSection() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.2 }}
+                    className="pt-1"
                   >
                     <motion.button
                       type="submit"
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px hsl(var(--primary) / 0.5)" }}
                       whileTap={{ scale: 0.98 }}
-                      className="relative w-full group overflow-hidden rounded-xl"
+                      className="relative w-full group overflow-hidden rounded-xl gradient-bg"
                     >
-                      <div className="absolute inset-0 gradient-bg" />
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                      <div className="relative flex items-center justify-center gap-2 py-4 text-primary-foreground font-semibold text-lg">
-                        <Send className="w-5 h-5" />
-                        Submit Request
+                      <div className="relative flex items-center justify-center gap-2 py-3 text-primary-foreground font-semibold text-sm">
+                        <Send className="w-4 h-4" />
+                        Get Quote Now
                       </div>
                     </motion.button>
                   </motion.div>
                 </form>
 
-                {/* Security Note */}
-                <motion.p
+                {/* Security Badge */}
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 1.3 }}
-                  className="text-center text-xs text-muted-foreground mt-6"
+                  className="flex items-center justify-center gap-1.5 text-[10px] text-muted-foreground mt-4"
                 >
-                  🔒 Your information is 100% secure
-                </motion.p>
+                  <span className="w-3 h-3">🔒</span>
+                  <span>100% Secure & Confidential</span>
+                </motion.div>
               </div>
             </div>
           </motion.div>
