@@ -34,7 +34,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative py-16 lg:py-24"
+      className="relative py-10 lg:py-20"
     >
       <div className="section-container relative z-10">
         {/* Content Section */}
@@ -254,7 +254,7 @@ export function HeroSection() {
               size="lg"
               variant="outline"
               onClick={() => setIsModalOpen(true)}
-              className="h-12 px-8 rounded-xl border-primary/30 hover:bg-primary/5"
+              className="h-12 px-8 rounded-xl border-primary/30 hover:bg-primary "
             >
               <span className="flex items-center gap-2">
                 Book Free Consultation
