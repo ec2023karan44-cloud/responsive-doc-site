@@ -63,7 +63,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="services" className="py-10 lg:py-20 bg-secondary/30">
       <div className="container">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">

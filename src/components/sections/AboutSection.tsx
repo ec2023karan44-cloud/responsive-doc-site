@@ -21,7 +21,7 @@ const features = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="about" className="py-10 lg:py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-bg-subtle opacity-50" />
 

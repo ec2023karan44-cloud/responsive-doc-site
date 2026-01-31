@@ -2,7 +2,7 @@ import bannerImage from "@/assets/digital-marketing-banner.jpg";
 
 export function BannerSection() {
   return (
-    <section className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] mt-16 overflow-hidden">
+    <section className="relative w-full h-[40vh] md:h-[60vh] lg:h-[100vh] mt-16 overflow-hidden">
       <img
         src={bannerImage}
         alt="Digital Marketing"

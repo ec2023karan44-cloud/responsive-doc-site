@@ -42,16 +42,16 @@ const reviews = [
 
 export function ReviewsSection() {
   return (
-    <section id="reviews" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="reviews" className="py-10 lg:py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-bg-subtle" />
 
       <div className="container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
             Client Testimonials
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             What Our{" "}
             <span className="gradient-text">Clients Say</span>

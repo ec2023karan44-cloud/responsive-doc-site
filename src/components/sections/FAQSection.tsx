@@ -36,14 +36,14 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-20 lg:py-32 bg-secondary/30">
+    <section id="faq" className="py-10 lg:py-20 bg-secondary/30">
       <div className="container">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <ScrollReveal className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
               FAQ
-            </div>
+            </div> */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
               Frequently Asked{" "}
               <span className="gradient-text">Questions</span>
