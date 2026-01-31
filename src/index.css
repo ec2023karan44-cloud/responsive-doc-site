@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    /* Meta-inspired light theme - Clean blues and professional colors */
-    --background: 210 20% 98%;
+    /* Light Meta Colors - Clean, crisp, professional */
+    --background: 210 40% 98%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 214 100% 50%;
+    --primary: 214 89% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
+    --secondary: 214 32% 95%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96%;
+    --muted: 214 32% 95%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 280 100% 60%;
+    --accent: 214 89% 52%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -31,17 +31,17 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 214 100% 50%;
+    --ring: 214 89% 52%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --gradient-start: 214 100% 50%;
-    --gradient-end: 280 100% 60%;
+    /* Meta blue palette */
+    --gradient-start: 214 89% 52%;
+    --gradient-end: 214 100% 60%;
     --surface-elevated: 0 0% 100%;
-    --surface-overlay: 210 20% 98%;
+    --surface-overlay: 210 40% 98%;
     --text-muted: 215 16% 57%;
-    --hero-bg: 220 25% 97%;
+    --hero-bg: 210 40% 98%;
   }
 
   .dark {
@@ -54,7 +54,7 @@
     --popover: 222 47% 9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 214 100% 60%;
+    --primary: 214 89% 60%;
     --primary-foreground: 222 47% 6%;
 
     --secondary: 217 33% 17%;
@@ -63,7 +63,7 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 280 100% 70%;
+    --accent: 214 89% 60%;
     --accent-foreground: 222 47% 6%;
 
     --destructive: 0 63% 31%;
@@ -71,11 +71,11 @@
 
     --border: 217 33% 20%;
     --input: 217 33% 20%;
-    --ring: 214 100% 60%;
+    --ring: 214 89% 60%;
 
-    /* Custom dark colors */
-    --gradient-start: 214 100% 55%;
-    --gradient-end: 280 100% 65%;
+    /* Meta dark blue palette */
+    --gradient-start: 214 89% 55%;
+    --gradient-end: 214 100% 65%;
     --surface-elevated: 222 47% 11%;
     --surface-overlay: 222 47% 8%;
     --text-muted: 215 20% 55%;
