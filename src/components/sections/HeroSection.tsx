@@ -34,7 +34,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative py-16 lg:py-24"
+      className="relative py-12 lg:py-20"
     >
       <div className="container relative z-10">
         {/* Content Section */}

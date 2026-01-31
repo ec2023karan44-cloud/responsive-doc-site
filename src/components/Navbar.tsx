@@ -45,8 +45,8 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-effect shadow-soft py-3"
-          : "bg-transparent py-4"
+          ? "glass-effect shadow-soft py-2"
+          : "bg-transparent py-3"
       }`}
     >
       <div className="container flex items-center justify-between">
@@ -55,7 +55,7 @@ export function Navbar() {
           <img 
             src={logo} 
             alt="AdCraftz Logo" 
-            className="h-16 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
         </Link>
 

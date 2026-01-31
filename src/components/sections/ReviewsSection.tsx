@@ -4,39 +4,39 @@ import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/animat
 const reviews = [
   {
     text: "AdCraftz transformed our online presence completely. Their team understood our goals, built a solid strategy, and delivered leads consistently. Truly the best digital marketing agency we've worked with.",
-    author: "Rajesh K.",
+    author: "Rajesh",
     role: "Business Owner",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face",
   },
   {
     text: "Transparent, responsive, and highly professional. They kept us updated at every step and delivered results better than what we expected. Our ad performance improved within just weeks.",
-    author: "Priya M.",
+    author: "Priya",
     role: "Marketing Director",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face",
   },
   {
     text: "Exceptional creativity and execution. From website design to ad campaigns, the creativity and attention to detail were outstanding. Our brand visibility has grown significantly.",
-    author: "Amit S.",
+    author: "Amit",
     role: "Startup Founder",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop&crop=face",
   },
   {
     text: "Reliable team with proven results. We saw a huge difference in our lead quality and conversions after partnering with AdCraftz. Their strategies actually work.",
-    author: "Sunita R.",
+    author: "Sunita",
     role: "E-commerce Manager",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=100&h=100&fit=crop&crop=face",
   },
   {
     text: "They feel more like a growth partner than an agency. The team is proactive, gives valuable insights, and genuinely cares about the success of our business. Highly recommended.",
-    author: "Vikram T.",
+    author: "Vikram",
     role: "CEO",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
   {
     text: "Full-funnel marketing done right. AdCraftz handled everything—from awareness campaigns to remarketing—and our ROI has never been better. Worth every rupee.",
-    author: "Deepa N.",
+    author: "Deepika",
     role: "Brand Manager",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop&crop=face",
   },
 ];
 
@@ -71,7 +71,7 @@ export function ReviewsSection() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      className="w-5 h-5 fill-amber-400 text-amber-400"
                     />
                   ))}
                 </div>
