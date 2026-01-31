@@ -9,7 +9,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-bg-subtle" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple/3 to-pink/5" />
       <motion.div 
         className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
         animate={{ 
@@ -19,7 +19,7 @@ export function ContactSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div 
-        className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+        className="absolute top-0 right-0 w-96 h-96 bg-purple/10 rounded-full blur-3xl"
         animate={{ 
           scale: [1.2, 1, 1.2],
           x: [20, -20, 20],
@@ -27,7 +27,7 @@ export function ContactSection() {
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">

@@ -36,8 +36,8 @@ const faqs = [
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-20 lg:py-32 bg-secondary/30">
-      <div className="container">
+    <section id="faq" className="py-20 lg:py-32 bg-gradient-to-br from-teal/5 via-accent/3 to-primary/5">
+      <div className="section-container">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <ScrollReveal className="text-center mb-12">
