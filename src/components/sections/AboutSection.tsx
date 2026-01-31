@@ -25,7 +25,7 @@ export function AboutSection() {
       {/* Background */}
       <div className="absolute inset-0 gradient-bg-subtle opacity-50" />
 
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left - Image/Visual */}
           <ScrollReveal direction="left">

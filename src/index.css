@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Enhanced Light Meta Colors - Vibrant & Modern */
+    /* Multi-Color Meta Light Theme - Vibrant & Dynamic */
     --background: 210 50% 98%;
     --foreground: 222 47% 11%;
 
@@ -14,33 +14,56 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 217 91% 60%;
+    /* Meta Blue Primary */
+    --primary: 214 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96%;
     --secondary-foreground: 222 47% 11%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 20% 50%;
+    --muted-foreground: 215 20% 45%;
 
-    --accent: 199 89% 48%;
+    /* Meta Cyan Accent */
+    --accent: 195 100% 45%;
     --accent-foreground: 0 0% 100%;
+
+    /* Meta Teal */
+    --teal: 174 72% 42%;
+    --teal-foreground: 0 0% 100%;
+
+    /* Meta Green */
+    --success: 142 76% 42%;
+    --success-foreground: 0 0% 100%;
+
+    /* Meta Purple */
+    --purple: 262 83% 58%;
+    --purple-foreground: 0 0% 100%;
+
+    /* Meta Pink */
+    --pink: 330 81% 60%;
+    --pink-foreground: 0 0% 100%;
+
+    /* Meta Orange */
+    --orange: 25 95% 53%;
+    --orange-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 217 91% 60%;
+    --ring: 214 100% 50%;
 
     --radius: 0.75rem;
 
-    /* Enhanced Meta blue palette */
-    --gradient-start: 217 91% 60%;
-    --gradient-end: 199 89% 48%;
+    /* Enhanced Multi-Color Gradients */
+    --gradient-start: 214 100% 50%;
+    --gradient-mid: 195 100% 45%;
+    --gradient-end: 174 72% 42%;
     --surface-elevated: 0 0% 100%;
     --surface-overlay: 210 50% 98%;
-    --text-muted: 215 20% 50%;
+    --text-muted: 215 20% 45%;
     --hero-bg: 210 50% 98%;
   }
 
@@ -54,8 +77,8 @@
     --popover: 222 47% 8%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 65%;
-    --primary-foreground: 222 47% 5%;
+    --primary: 214 100% 55%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 217 33% 15%;
     --secondary-foreground: 210 40% 98%;
@@ -63,19 +86,40 @@
     --muted: 217 33% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 199 89% 55%;
+    --accent: 195 100% 50%;
     --accent-foreground: 222 47% 5%;
+
+    /* Meta Teal */
+    --teal: 174 72% 50%;
+    --teal-foreground: 0 0% 100%;
+
+    /* Meta Green */
+    --success: 142 76% 50%;
+    --success-foreground: 0 0% 100%;
+
+    /* Meta Purple */
+    --purple: 262 83% 65%;
+    --purple-foreground: 0 0% 100%;
+
+    /* Meta Pink */
+    --pink: 330 81% 65%;
+    --pink-foreground: 0 0% 100%;
+
+    /* Meta Orange */
+    --orange: 25 95% 58%;
+    --orange-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 33% 18%;
     --input: 217 33% 18%;
-    --ring: 217 91% 65%;
+    --ring: 214 100% 55%;
 
-    /* Enhanced Meta dark palette */
-    --gradient-start: 217 91% 60%;
-    --gradient-end: 199 89% 55%;
+    /* Enhanced Multi-Color Gradients */
+    --gradient-start: 214 100% 55%;
+    --gradient-mid: 195 100% 50%;
+    --gradient-end: 174 72% 50%;
     --surface-elevated: 222 47% 10%;
     --surface-overlay: 222 47% 7%;
     --text-muted: 215 20% 55%;
@@ -99,16 +143,28 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-accent to-teal bg-clip-text text-transparent;
     background-size: 200% auto;
   }
 
   .gradient-bg {
-    @apply bg-gradient-to-r from-primary to-accent;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)), hsl(var(--teal)));
+  }
+
+  .gradient-bg-purple {
+    background: linear-gradient(135deg, hsl(var(--purple)), hsl(var(--pink)));
+  }
+
+  .gradient-bg-warm {
+    background: linear-gradient(135deg, hsl(var(--orange)), hsl(var(--pink)));
+  }
+
+  .gradient-bg-cool {
+    background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--teal)), hsl(var(--success)));
   }
 
   .gradient-bg-subtle {
-    @apply bg-gradient-to-br from-primary/5 via-transparent to-accent/5;
+    @apply bg-gradient-to-br from-primary/5 via-accent/3 to-teal/5;
   }
 
   .glass-effect {
@@ -129,6 +185,11 @@
 
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Section container for consistent alignment */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
 

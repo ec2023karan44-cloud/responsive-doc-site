@@ -50,9 +50,9 @@ const caseStudies = [
 export function CaseStudiesSection() {
   return (
     <section id="case-studies" className="py-20 lg:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 gradient-bg-subtle opacity-30" />
+      <div className="absolute inset-0 bg-gradient-to-br from-purple/5 via-pink/3 to-orange/5 opacity-50" />
       
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
