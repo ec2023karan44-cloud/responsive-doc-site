@@ -44,9 +44,9 @@ export function ReviewsSection() {
   return (
     <section id="reviews" className="py-10 lg:py-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 gradient-bg-subtle" />
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-teal/3 to-success/5" />
 
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
           {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">

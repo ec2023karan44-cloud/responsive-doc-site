@@ -52,7 +52,7 @@ export function CaseStudiesSection() {
     <section id="case-studies" className="py-10 lg:py-20 relative overflow-hidden">
       <div className="absolute inset-0 gradient-bg-subtle opacity-30" />
       
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
           {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">

@@ -36,7 +36,7 @@ export function HeroSection() {
       id="home"
       className="relative py-10 lg:py-20"
     >
-      <div className="container relative z-10">
+      <div className="section-container relative z-10">
         {/* Content Section */}
         <div className="text-center max-w-4xl mx-auto mb-12">
           {/* Badge */}

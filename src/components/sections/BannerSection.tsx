@@ -9,7 +9,7 @@ export function BannerSection() {
         className="w-full h-full object-cover"
       />
       {/* Subtle gradient overlay for better blending */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50" />
     </section>
   );
 }
