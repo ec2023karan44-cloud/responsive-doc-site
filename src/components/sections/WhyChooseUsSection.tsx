@@ -49,7 +49,7 @@ const reasons = [
 
 export function WhyChooseUsSection() {
   return (
-    <section id="why-us" className="py-20 lg:py-32 bg-gradient-to-br from-orange/5 via-pink/3 to-purple/5 relative overflow-hidden">
+    <section id="why-us" className="py-10 lg:py-20 bg-secondary/30 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-5">
         <img
@@ -62,9 +62,9 @@ export function WhyChooseUsSection() {
       <div className="section-container relative z-10">
         {/* Header */}
         <ScrollReveal className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
+          {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-6">
             Why Choose Us
-          </div>
+          </div> */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Why We're the{" "}
             <span className="gradient-text">Best Choice</span>

@@ -164,7 +164,7 @@
   }
 
   .gradient-bg-subtle {
-    @apply bg-gradient-to-br from-primary/5 via-accent/3 to-teal/5;
+    @apply bg-gradient-to-br from-primary/5 via-accent/5 to-teal/5;
   }
 
   .glass-effect {

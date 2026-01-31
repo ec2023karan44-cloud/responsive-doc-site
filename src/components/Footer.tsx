@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import logo from "@/assets/AdCraftz-logo.png";
 
 const footerLinks = {
   company: [
@@ -32,19 +33,18 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
-      <div className="section-container py-12 lg:py-16">
+      <div className="section-container py-12 lg:py-14">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">A</span>
-              </div>
-              <span className="font-bold text-xl">
-                Ad<span className="gradient-text">Craftz</span>
-              </span>
-            </Link>
-            <p className="text-muted-foreground mb-6 max-w-sm">
+            <Link to="/" className="flex items-center gap-2">
+          <img 
+            src={logo} 
+            alt="AdCraftz Logo" 
+            className="h-20 w-auto object-contain"
+          />
+        </Link>
+            <p className="text-muted-foreground mb-6 max-w-sm mt-6">
               The Best Digital Marketing Agency in Hyderabad. We craft digital
               journeys that turn clicks into customers.
             </p>
