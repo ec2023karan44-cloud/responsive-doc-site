@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from "framer-motion";
 import heroBanner from "@/assets/hero-banner.jpg";
 
@@ -7,7 +9,7 @@ export function AnimatedBackground() {
       {/* Hero Banner Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBanner})` }}
+        style={{ backgroundImage: `url(${heroBanner.src})` }}
       >
         <div className="absolute inset-0 bg-background/85 dark:bg-background/95" />
       </div>

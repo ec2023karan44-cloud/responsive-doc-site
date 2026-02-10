@@ -1,3 +1,5 @@
+'use client';
+
 import { Eye, Heart, ShoppingCart, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -34,7 +36,7 @@ const funnelStages = [
 
 export function FunnelSection() {
   return (
-    <section className="py-20 lg:py-32 relative overflow-hidden">
+    <section className="py-10 lg:py-20 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-bg-subtle" />
 

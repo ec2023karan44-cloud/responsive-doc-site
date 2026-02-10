@@ -1,73 +1,112 @@
-# Welcome to your Lovable project
+# AdCraftz - Digital Marketing Agency
 
-## Project info
+A modern, responsive digital marketing agency website built with Next.js 14, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Next.js 14** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **Framer Motion** for animations
+- **Radix UI** components
+- **Dark/Light theme** support
+- **Fully responsive** design
+- **SEO optimized**
+- **Server-side rendering**
 
-There are several ways of editing your application.
+## Project Structure
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+├── app/                    # Next.js App Router
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   └── blog/
+│       └── page.tsx       # Blog page
+├── src/
+│   ├── components/        # Reusable components
+│   │   ├── ui/          # UI components
+│   │   ├── sections/     # Page sections
+│   │   └── animations/   # Animation components
+│   ├── hooks/            # Custom hooks
+│   ├── lib/              # Utilities
+│   └── assets/           # Static assets
+├── public/                # Static files
+└── ...config files        # Configuration
 ```
 
-**Edit a file directly in GitHub**
+## Tech Stack
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **UI Components**: Radix UI
+- **Icons**: Lucide React
+- **Theme**: next-themes
 
-**Use GitHub Codespaces**
+## Getting Started
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-## What technologies are used for this project?
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
 
-This project is built with:
+3. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. **Start production server**:
+   ```bash
+   npm start
+   ```
 
-## How can I deploy this project?
+## Pages
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- **Home** (`/`) - Landing page with all sections
+- **Blog** (`/blog`) - Blog listing page
 
-## Can I connect a custom domain to my Lovable project?
+## Components
 
-Yes, you can!
+### Main Sections
+- **Navbar** - Navigation header
+- **BannerSection** - Hero banner
+- **AboutSection** - About us section
+- **ServicesSection** - Services showcase
+- **FunnelSection** - Marketing funnel
+- **WhyChooseUsSection** - Why choose us
+- **CaseStudiesSection** - Case studies
+- **ReviewsSection** - Customer reviews
+- **FAQSection** - Frequently asked questions
+- **ContactSection** - Contact form
+- **Footer** - Site footer
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### UI Components
+- **Button**, **Input**, **Textarea**, **Badge**, etc.
+- **Toast**, **Dialog**, **Select**, etc.
+- **Theme Toggle**, **Animated Background**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Features
+
+- **Responsive Design** - Mobile-first approach
+- **Dark Mode** - System theme detection
+- **Smooth Animations** - Scroll reveals and transitions
+- **Interactive Elements** - Hover effects and micro-interactions
+- **SEO Optimized** - Meta tags and semantic HTML
+- **Performance** - Optimized images and code splitting
+
+## Contact
+
+- **Email**: info@adcraftz.com
+- **Phone**: +91 XXXXXXXXXX
+- **Location**: Hyderabad, India
+
+---
+
+Built with ❤️ using Next.js and TypeScript

@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
@@ -29,12 +31,19 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => {
+      if (typeof window !== 'undefined') {
+        return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+      }
+      return defaultTheme;
+    }
   );
 
   const [resolvedTheme, setResolvedTheme] = useState<"dark" | "light">("light");
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
 
@@ -63,7 +72,7 @@ export function ThemeProvider({
 
   // Listen for system theme changes
   useEffect(() => {
-    if (theme !== "system") return;
+    if (theme !== "system" || typeof window === 'undefined') return;
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e: MediaQueryListEvent) => {

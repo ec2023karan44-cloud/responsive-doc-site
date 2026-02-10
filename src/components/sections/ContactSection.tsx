@@ -1,3 +1,5 @@
+'use client';
+
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -7,9 +9,9 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 lg:py-32 relative overflow-hidden">
+    <section id="contact" className="py-10 lg:py-20 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple/3 to-pink/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-purple/5 to-pink/10" />
       <motion.div 
         className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
         animate={{ 
@@ -49,7 +51,7 @@ export function ContactSection() {
           <ScrollReveal direction="left">
             <div className="space-y-8">
               <div className="bg-card rounded-2xl p-6 border border-border">
-                <h3 className="text-xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-xl font-bold mb-5">Contact Information</h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
@@ -97,7 +99,7 @@ export function ContactSection() {
               </div>
 
               {/* Map Image */}
-              <div className="bg-card rounded-2xl border border-border overflow-hidden h-64">
+              <div className="bg-card rounded-2xl border border-border overflow-hidden h-60">
                 <img
                   src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&h=300&fit=crop"
                   alt="Hyderabad Location Map"
@@ -115,7 +117,7 @@ export function ContactSection() {
                 Fill out the form below and we'll get back to you soon.
               </p>
 
-              <form className="space-y-5">
+              <form className="space-y-7">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <Input
                     placeholder="Your Name"
